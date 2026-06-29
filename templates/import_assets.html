@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Import Assets</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Import Assets from CSV</h2>
+
+    <br>
+
+    <form
+        action="/import-assets"
+        method="POST"
+        enctype="multipart/form-data"
+    >
+
+        <input
+            type="file"
+            name="csv_file"
+            accept=".csv"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">
+
+            Import CSV
+
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}
+Reports
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2 class="text-danger mb-4">
+
+        Security Reports
+
+    </h2>
+
+    <div class="card">
+
+        <div class="card-header">
+
+            Generate Enterprise Report
+
+        </div>
+
+        <div class="card-body">
+
+            <p>
+
+                Click below to generate and open the latest PivotForge report.
+
+            </p>
+
+            <a
+
+                href="/generate-report"
+
+                class="btn btn-danger"
+
+                target="_blank">
+
+                Generate & Open PDF
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

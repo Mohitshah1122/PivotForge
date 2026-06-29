@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Vulnerabilities | PivotForge
+
+{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">
+
+Vulnerability Management
+
+</h2>
+
+<div class="feature-card p-4 mb-5">
+
+<form method="POST">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label>Asset</label>
+
+<select
+class="form-select"
+name="asset_id">
+
+{% for asset in assets %}
+
+<option value="{{ asset.id }}">
+
+{{ asset.asset_name }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>CVE ID</label>
+
+<input
+type="text"
+class="form-control"
+name="cve_id"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Vulnerability Name</label>
+
+<input
+type="text"
+class="form-control"
+name="vulnerability_name"
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Severity</label>
+
+<select
+class="form-select"
+name="severity">
+
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+<option>Critical</option>
+
+</select>
+
+</div>
+
+<div class="col-12 mb-3">
+
+<label>Description</label>
+
+<textarea
+class="form-control"
+rows="3"
+name="description">
+
+</textarea>
+
+</div>
+
+</div>
+
+<button class="btn btn-danger">
+
+Add Vulnerability
+
+</button>
+
+</form>
+
+</div>
+
+<div class="feature-card p-4">
+
+<h4>
+
+Stored Vulnerabilities
+
+</h4>
+
+<hr>
+
+<table class="table table-dark table-hover">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Asset</th>
+
+<th>CVE</th>
+
+<th>Name</th>
+
+<th>Severity</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for vulnerability in vulnerabilities %}
+
+<tr>
+
+<td>{{ vulnerability.id }}</td>
+
+<td>{{ vulnerability.asset_name }}</td>
+
+<td>{{ vulnerability.cve_id }}</td>
+
+<td>{{ vulnerability.vulnerability_name }}</td>
+
+<td>
+
+<span class="badge bg-danger">
+
+{{ vulnerability.severity }}
+
+</span>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endblock %}

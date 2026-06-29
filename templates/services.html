@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Network Services</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Discovered Network Services</h2>
+
+<table>
+
+<tr>
+
+<th>Asset</th>
+
+<th>Port</th>
+
+<th>Protocol</th>
+
+<th>Service</th>
+
+<th>Version</th>
+
+</tr>
+
+{% for service in services %}
+
+<tr>
+
+<td>{{ service.asset_name }}</td>
+
+<td>{{ service.port }}</td>
+
+<td>{{ service.protocol }}</td>
+
+<td>{{ service.service_name }}</td>
+
+<td>{{ service.version }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+
+</html>

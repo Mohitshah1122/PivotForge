@@ -1,0 +1,350 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard | PivotForge
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+<h2 class="text-danger">
+
+Security Dashboard
+
+</h2>
+
+<div>
+
+<a href="/load-demo" class="btn btn-danger me-2">
+
+Load Demo Enterprise Network
+
+</a>
+
+<a href="/graph" class="btn btn-primary">
+
+View Enterprise Graph
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="row">
+
+<div class="col-md-3 mb-4">
+
+<div class="card dashboard-card">
+
+<h6>Total Assets</h6>
+
+<h1 class="text-danger">
+
+{{ total_assets }}
+
+</h1>
+
+<p>Enterprise Devices</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3 mb-4">
+
+<div class="card dashboard-card">
+
+<h6>Vulnerabilities</h6>
+
+<h1 class="text-warning">
+
+{{ total_vulnerabilities }}
+
+</h1>
+
+<p>Detected CVEs</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3 mb-4">
+
+<div class="card dashboard-card">
+
+<h6>Relationships</h6>
+
+<h1 class="text-info">
+
+{{ total_relationships }}
+
+</h1>
+
+<p>Trust Connections</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3 mb-4">
+
+<div class="card dashboard-card">
+
+<h6>Graph Nodes</h6>
+
+<h1 class="text-success">
+
+{{ total_nodes }}
+
+</h1>
+
+<p>Attack Graph Nodes</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Second Row -->
+
+<div class="row">
+
+<div class="col-md-6 mb-4">
+
+<div class="card">
+
+<div class="card-header">
+
+Enterprise Summary
+
+</div>
+
+<div class="card-body">
+
+<table class="table table-dark table-hover">
+
+<tr>
+
+<td>Total Assets</td>
+
+<td>{{ total_assets }}</td>
+
+</tr>
+
+<tr>
+
+<td>Total Vulnerabilities</td>
+
+<td>{{ total_vulnerabilities }}</td>
+
+</tr>
+
+<tr>
+
+<td>Total Relationships</td>
+
+<td>{{ total_relationships }}</td>
+
+</tr>
+
+<tr>
+
+<td>Graph Nodes</td>
+
+<td>{{ total_nodes }}</td>
+
+</tr>
+
+<tr>
+
+<td>Graph Edges</td>
+
+<td>{{ total_edges }}</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-6 mb-4">
+
+<div class="card">
+
+<div class="card-header">
+
+Security Posture
+
+</div>
+
+<div class="card-body">
+
+<div class="progress mb-4" style="height:30px;">
+
+<div class="progress-bar bg-danger"
+
+style="width:85%;">
+
+85% Risk Exposure
+
+</div>
+
+</div>
+
+<ul class="list-group">
+
+<li class="list-group-item bg-dark text-white">
+
+✔ Assets Connected
+
+</li>
+
+<li class="list-group-item bg-dark text-white">
+
+✔ Graph Generated
+
+</li>
+
+<li class="list-group-item bg-dark text-white">
+
+✔ Attack Path Analysis Enabled
+
+</li>
+
+<li class="list-group-item bg-dark text-white">
+
+✔ Risk Engine Active
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Quick Actions -->
+
+<div class="card">
+
+<div class="card-header">
+
+Quick Navigation
+
+</div>
+
+<div class="card-body">
+
+<div class="row text-center">
+
+<div class="col-md-2">
+
+<a href="/assets"
+
+class="btn btn-outline-danger w-100">
+
+Assets
+
+</a>
+
+</div>
+
+
+
+<div class="col-md-2">
+
+<a href="/vulnerabilities"
+
+class="btn btn-outline-warning w-100">
+
+Vulnerabilities
+
+</a>
+
+</div>
+
+<div class="col-md-2">
+
+<a href="/relationships"
+
+class="btn btn-outline-info w-100">
+
+Relationships
+
+</a>
+
+</div>
+
+<div class="col-md-2">
+
+<a href="/attack-paths"
+
+class="btn btn-outline-success w-100">
+
+Attack Paths
+
+</a>
+
+</div>
+
+<div class="col-md-2">
+
+<a href="/graph"
+
+class="btn btn-outline-primary w-100">
+
+Graph
+
+</a>
+
+</div>
+
+<div class="col-md-2">
+
+<a href="/reports"
+
+class="btn btn-outline-light w-100">
+
+Reports
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="import-actions">
+
+    <a href="/import-assets" class="import-btn">
+        📄 Import CSV Assets
+    </a>
+
+    <a href="/import-nmap" class="import-btn">
+        🌐 Import Nmap Scan
+    </a>
+
+   
+
+</div>
+
+{% endblock %}

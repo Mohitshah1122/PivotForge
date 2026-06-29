@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block title %}
+Attack Path Intelligence
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+<h2 class="text-danger mb-4">
+
+Attack Path Intelligence
+
+</h2>
+
+<div class="card shadow border-danger mb-4">
+
+<div class="card-body">
+
+<form method="POST">
+
+<div class="row">
+
+<div class="col-md-4">
+
+<label>Source Asset</label>
+
+<select class="form-select" name="source">
+
+{% for node in nodes %}
+
+<option>{{ node }}</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+<div class="col-md-4">
+
+<label>Destination Asset</label>
+
+<select class="form-select" name="destination">
+
+{% for node in nodes %}
+
+<option>{{ node }}</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+<div class="col-md-4">
+
+<label>Algorithm</label>
+
+<select class="form-select" name="algorithm">
+
+<option value="bfs">
+
+Breadth First Search
+
+</option>
+
+<option value="dfs">
+
+Depth First Search
+
+</option>
+
+<option value="dijkstra">
+
+Dijkstra Shortest Path
+
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<br>
+
+<button class="btn btn-danger">
+
+Generate Attack Path
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+{% if path %}
+
+<div class="card border-success shadow mb-4">
+
+<div class="card-header bg-success text-white">
+
+Generated Attack Path
+
+</div>
+
+<div class="card-body">
+
+<ol>
+
+{% for node in path %}
+
+<li>
+
+{{ node }}
+
+</li>
+
+{% endfor %}
+
+</ol>
+
+</div>
+
+</div>
+
+{% endif %}
+
+{% if risk %}
+
+<div class="card border-danger shadow">
+
+<div class="card-header bg-danger text-white">
+
+Attack Risk Analysis
+
+</div>
+
+<div class="card-body">
+
+<h4>
+
+Risk Score :
+
+{{ risk.score }}/100
+
+</h4>
+
+<h3>
+
+Risk Level :
+
+{{ risk.level }}
+
+</h3>
+
+</div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

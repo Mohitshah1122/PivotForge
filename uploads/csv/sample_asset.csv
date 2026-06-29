@@ -1,0 +1,11 @@
+asset_name,ip_address,asset_type,criticality
+Firewall,192.168.1.1,Firewall,High
+Web Server,192.168.1.10,Server,High
+Application Server,192.168.1.20,Server,Medium
+Database Server,192.168.1.30,Database,Critical
+Domain Controller,192.168.1.40,Server,Critical
+Workstation-01,192.168.1.100,Workstation,Low
+VPN Gateway,192.168.1.5,Network,High
+Mail Server,192.168.1.50,Server,Medium
+NAS Storage,192.168.1.60,Storage,High
+Printer-01,192.168.1.70,Printer,Low

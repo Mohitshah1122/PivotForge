@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Asset Details</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>{{ asset.asset_name }}</h2>
+
+<hr>
+
+<p><b>IP Address :</b> {{ asset.ip_address }}</p>
+
+<p><b>Asset Type :</b> {{ asset.asset_type }}</p>
+
+<p><b>Criticality :</b> {{ asset.criticality }}</p>
+
+<hr>
+
+<h3>Asset Risk Assessment</h3>
+
+<p>
+
+<b>Risk Score :</b>
+
+{{ risk.score }}/100
+
+</p>
+
+<p>
+
+<b>Risk Level :</b>
+
+{{ risk.level }}
+
+</p>
+
+<hr>
+
+<br>
+
+
+<h3>Services</h3>
+
+<table>
+
+<tr>
+
+<th>Port</th>
+
+<th>Protocol</th>
+
+<th>Service</th>
+
+<th>Version</th>
+
+</tr>
+
+{% for service in services %}
+
+<tr>
+
+<td>{{ service.port }}</td>
+
+<td>{{ service.protocol }}</td>
+
+<td>{{ service.service_name }}</td>
+
+<td>{{ service.version }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<h3>Vulnerabilities</h3>
+
+<table>
+
+<tr>
+
+<th>CVE</th>
+
+<th>Name</th>
+
+<th>Severity</th>
+
+</tr>
+
+{% for vulnerability in vulnerabilities %}
+
+<tr>
+
+<td>{{ vulnerability.cve_id }}</td>
+
+<td>{{ vulnerability.vulnerability_name }}</td>
+
+<td>{{ vulnerability.severity }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<h3>Relationships</h3>
+
+<table>
+
+<tr>
+
+<th>Connected Asset</th>
+
+<th>Relationship</th>
+
+</tr>
+
+{% for relationship in relationships %}
+
+<tr>
+
+<td>{{ relationship.asset_name }}</td>
+
+<td>{{ relationship.relationship_type }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+
+</html>
