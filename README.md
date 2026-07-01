@@ -20,9 +20,6 @@ Professional Enterprise Attack Path Intelligence Platform for Security Teams
 ![PDF Reports](https://img.shields.io/badge/PDF-Reports-darkred)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Mohitshah1122/PivotForge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Mohitshah1122/PivotForge)
-![GitHub issues](https://img.shields.io/github/issues/Mohitshah1122/PivotForge)
-![GitHub stars](https://img.shields.io/github/stars/Mohitshah1122/PivotForge?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Mohitshah1122/PivotForge?style=social)
 
 ---
 
